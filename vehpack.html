@@ -157,3 +157,17 @@ function buyVehicle(name, price) {
 </script>
 
 
+
+</html>
+
+<script src="form.js"></script>
+<script>
+function buyVehicle(name, price) {
+    window.location.href =
+        "form.html?vehicle=" + encodeURIComponent(name) +
+        "&price=" + encodeURIComponent(price);
+}
+</script>
+
+
+
