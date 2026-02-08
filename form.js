@@ -19,25 +19,26 @@ function showBuyNotice() {
 /* =========================
    PAYMENT MODAL
 ========================= */
+/* Modal */
 function openPaymentModal() {
-    const priceField = document.getElementById("price");
-    const amount = priceField ? priceField.value : "0";
-
-    if (!amount || amount === "0") {
-        alert("⚠️ Please select a valid amount first");
-        return;
-    }
-
-    document.getElementById("modalAmount").textContent = "₹" + amount;
-    document.getElementById("modalAmountNum").textContent = amount;
-
-    generateQRCode(amount);
-    document.getElementById("paymentModal").style.display = "flex";
+    document.getElementById("modalAmount").textContent = "₹" + price;
+    generateQR(price);
+    document.getElementById("paymentModal").style.display = "block";
 }
 
 function closePaymentModal() {
     document.getElementById("paymentModal").style.display = "none";
 }
+
+function generateQR(amount) {
+    const qr = document.getElementById("qrCode");
+    qr.innerHTML = "";
+    const img = document.createElement("img");
+    img.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=gajaraj1628@okhdfcbank&pn=ASCEND&am=${amount}&cu=INR`;
+    qr.appendChild(img);
+}
+
+
 
 /* =========================
    QR GENERATION
@@ -233,3 +234,25 @@ form.addEventListener("submit", function (e) {
             console.error(err);
         });
 });
+
+/* Cooldown */
+let cooldown = false;
+function startCooldown() {
+    cooldown = true;
+    let t = 30;
+    submitBtn.disabled = true;
+    resetBtn.disabled = true;
+
+    const cd = document.getElementById("cooldownMsg");
+    const timer = setInterval(() => {
+        cd.textContent = `Cooldown: ${t}s`;
+        t--;
+        if (t < 0) {
+            clearInterval(timer);
+            resetBtn.disabled = false;
+            cooldown = false;
+            cd.textContent = "";
+        }
+    }, 1000);
+}
+
