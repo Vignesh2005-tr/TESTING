@@ -195,7 +195,7 @@
 
     width: 100%;
     max-width: 1000px;
-    margin: 30px auto;
+    margin: 40px ;
     padding: 25px;
 
     background: linear-gradient(145deg, #111, #1c1c1c);
@@ -226,8 +226,8 @@
 
     display: flex;
     gap: 18px;
-    padding: 12px 20px;
-
+    padding: 20px 20px;
+    margin: 40px;
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(10px);
 
