@@ -317,6 +317,7 @@
 
 
 
+
 .bottom-social-bar {
     position: fixed;
     bottom: 15px;
@@ -408,91 +409,6 @@
             display: block !important;
             margin: 0 auto !important;
         }
-
-        /* ===== MOBILE RESPONSIVENESS ===== */
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-                margin: 15px 10px;
-            }
-
-            h2 {
-                font-size: 1.3rem;
-            }
-
-            .vehicle-card {
-                max-width: 95%;
-                padding: 20px;
-                margin: 20px auto;
-            }
-
-            .vehicle-card img {
-                width: 250px;
-            }
-
-            .container {
-                width: 95%;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 15px;
-                padding-bottom: 30px;
-            }
-
-            .support-pack {
-                padding: 20px;
-            }
-
-            button {
-                padding: 8px 18px;
-                font-size: 0.85rem;
-            }
-
-            .BUY button {
-                padding: 8px 24px;
-                width: 80px;
-                font-size: 0.9rem;
-            }
-
-            .bottom-social-bar {
-                gap: 12px;
-                padding: 15px 15px;
-                bottom: 10px;
-            }
-
-            .social-btn {
-                padding: 6px 12px;
-                font-size: 0.8rem;
-            }
-
-            .social-btn img {
-                width: 22px;
-                height: 22px;
-            }
-
-            .contact {
-                margin: 20px;
-                padding: 20px;
-                grid-template-columns: 1fr;
-            }
-
-            details {
-                margin-top: 15px;
-            }
-
-            summary {
-                font-size: 1rem;
-            }
-
-            ul {
-                font-size: 0.85rem;
-                line-height: 1.5;
-            }
-
-            hr {
-                width: 80%;
-            }
-        }
-
         @media (max-width: 600px) {
             h1 {
                 font-size: 1.5rem;
@@ -740,4 +656,5 @@
                 font-size: 14px !important;
                 padding: 6px;
             }
+
         }
